@@ -2,4 +2,34 @@
 const { post } = Astro.props
 ---
 
-<li><a href={post.url}>{post.frontmatter.title}</a></li>
+<li >
+    <a href={post.url} >{post.frontmatter.title}
+        <img transition:name={`${post.frontmatter.image.url}`}  src={post.frontmatter.image.url} alt={post.frontmatter.image.alt}>
+    </a>
+</li>
+
+
+
+<style >
+    a{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        
+        img{
+            width: 50% ;
+        }
+    }
+    li{
+        list-style: none;
+        
+        a:visited{
+            color: unset;
+        }
+        
+    }
+    a:focus{
+        background-color: inherit;
+
+    }
+</style>

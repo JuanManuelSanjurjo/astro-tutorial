@@ -1,7 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greetings';
+import ReactTestComponent from "../components/ReactTestComponent"
+
 const pageTitle = "Página de inicio";
 ---
 <BaseLayout  pageTitle={pageTitle}>
   <h2>Mi impresionante subtítulo del blog</h2>
+  <!-- <Greeting messages={["Hola", "Qué tal", "Hola a todos"]} />  -->
+  <!-- el de arriba no funciona pq no tiene la directiva client:load -->
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+  <ReactTestComponent/>
+
 </BaseLayout>
+
+
+<style >
+  ul{
+    list-style: none;
+    color: red;
+  }
+
+</style>
